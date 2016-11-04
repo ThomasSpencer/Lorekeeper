@@ -1,7 +1,7 @@
 class LandingController < ApplicationController
-  
-  def index
 
+  def index
+    @stories = Story.all
   end
 
   def show
