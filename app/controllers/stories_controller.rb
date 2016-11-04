@@ -19,7 +19,12 @@ class StoriesController < ApplicationController
   def create
     @story = Story.new(story_params)
     @story.total_sessions = 0
-    @story.save
+
+    if @story.save
+      redirect_to root_path
+    else
+      render 'new'
+    end
   end
 
   def update
