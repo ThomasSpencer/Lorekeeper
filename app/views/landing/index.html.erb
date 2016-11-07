@@ -2,6 +2,10 @@
 <p>Welcome to Lorekeeper. A DM's best friend!</p>
 <p>Please select the story you wish to enter.</p>
 
-<%= link_to "View this story", landing_show_path %><br>
+<ul>
+  <% @stories.each do |story| %>
+  <li><%= link_to "#{story.title}", story %></li>
+  <% end %>
+</ul>
 
 <%= link_to "Create a New Adventure", new_story_path %>
