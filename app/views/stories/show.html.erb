@@ -1,0 +1,14 @@
+<h1><%= @story.title %></h1>
+
+<p> Welcome to the database for <%= @story.title %> </p>
+<ul>
+  <li>Number of Players: <%= @story.total_players %></li>
+  <li>Ruleset: <%= @story.ruleset %></li>
+  <li>Completed Sessions: <%= @story.total_sessions %></li>
+
+<% if @story.description %>
+<h3>Overview</h3>
+<p><%= @story.description %></p>
+<% end %>
+
+<%= link_to "Edit Information", edit_story_path %>
