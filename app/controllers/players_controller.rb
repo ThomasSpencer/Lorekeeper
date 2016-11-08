@@ -10,7 +10,7 @@ class PlayersController < ApplicationController
   end
 
   def new
-
+    @player = Player.new
   end
 
   def edit
@@ -18,7 +18,14 @@ class PlayersController < ApplicationController
   end
 
   def create
+    @player = Player.new(player_params)
+    @player.story_id = @story.id
 
+    if @player.save
+      redirect_to story_players_path(@story)
+    else
+      render 'new'
+    end
   end
 
   def update
@@ -33,5 +40,9 @@ class PlayersController < ApplicationController
 
   def find_story
     @story = Story.find(params[:story_id])
+  end
+
+  def player_params
+    params.require(:player).permit(:player_name, :character_name, :experience, :alignment, :strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma, :backstory)
   end
 end
