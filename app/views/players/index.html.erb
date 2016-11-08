@@ -1,0 +1,15 @@
+<h1> These are the players for <%= @story.title %></h1>
+
+<% if @players %>
+
+  <ul>
+    <% @players.each do |player| %>
+      <li><%= link_to "#{player.character_name}", story_player_path %></li>
+    <% end %>
+  </ul>
+
+<% else %>
+  <p> It appears you haven't added any players. Go ahead and add one!</p>
+<% end %>
+
+<%= link_to "Add a New Player Character", new_story_player_path %>

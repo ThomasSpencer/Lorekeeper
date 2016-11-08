@@ -1,6 +1,8 @@
 class PlayersController < ApplicationController
-  def index
+  before_action :find_story
 
+  def index
+    @players = Player.where("story_id = #{@story.id}")
   end
 
   def show
@@ -27,4 +29,9 @@ class PlayersController < ApplicationController
 
   end
 
+  private
+
+  def find_story
+    @story = Story.find(params[:story_id])
+  end
 end
