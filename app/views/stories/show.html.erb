@@ -2,7 +2,7 @@
 
 <p> Welcome to the database for <%= @story.title %> </p>
 <ul>
-  <li>Number of Players: <%= @story.total_players %></li>
+  <li>Number of Players: <%= link_to "#{@story.total_players}", story_players_path(@story) %>
   <li>Ruleset: <%= @story.ruleset %></li>
   <li>Completed Sessions: <%= @story.total_sessions %></li>
 
