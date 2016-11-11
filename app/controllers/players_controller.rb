@@ -6,7 +6,7 @@ class PlayersController < ApplicationController
   end
 
   def show
-
+    @player = Player.find(params[:id])
   end
 
   def new
@@ -37,10 +37,6 @@ class PlayersController < ApplicationController
   end
 
   private
-
-  def find_story
-    @story = Story.find(params[:story_id])
-  end
 
   def player_params
     params.require(:player).permit(:player_name, :character_name, :experience, :alignment, :strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma, :backstory)

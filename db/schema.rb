@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161108175422) do
+ActiveRecord::Schema.define(version: 20161111182314) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,9 +84,9 @@ ActiveRecord::Schema.define(version: 20161108175422) do
     t.integer  "dexterity"
     t.integer  "constitution"
     t.integer  "intelligence"
-    t.integer  "widsom"
+    t.integer  "wisdom"
     t.integer  "charisma"
-    t.integer  "expereince"
+    t.integer  "experience"
     t.string   "alignment"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false

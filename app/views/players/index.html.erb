@@ -4,7 +4,7 @@
 
   <ul>
     <% @players.each do |player| %>
-      <li><%= link_to "#{player.character_name}", story_player_path %></li>
+      <li><%= link_to "#{player.character_name}", story_player_path(@story, player) %></li>
     <% end %>
   </ul>
 

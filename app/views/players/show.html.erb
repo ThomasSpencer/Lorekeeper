@@ -1,0 +1,22 @@
+<h1>Profile for <%= @player.character_name %></h1>
+
+<h3>Player Name: <%= @player.player_name %></h3>
+
+<h3>Alignment: <%= @player.alignment %></h3>
+
+<h3>Experieence: <%= @player.experience %></h3>
+
+<h3>Stats</h3>
+
+<h4>Strength: <%= @player.strength %></h4>
+<h4>Dexterity: <%= @player.dexterity %></h4>
+<h4>Constitution: <%= @player.constitution %></h4>
+<h4>Intelligence: <%= @player.intelligence %></h4>
+<h4>Wisdom: <%= @player.wisdom %></h4>
+<h4>Charisma: <%= @player.charisma %></h4>
+
+<h3>Backstory</h3>
+
+<p><%= @player.backstory %></p>
+
+<%= link_to "Edit #{@player.character_name}", edit_story_player_path(@story, @player) %>
