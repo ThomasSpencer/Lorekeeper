@@ -11,4 +11,10 @@
 <p><%= @story.description %></p>
 <% end %>
 
+<br>
+
+<%= link_to "View #{@story.title}'s Planes", story_planes_path(@story) %>
+
+<br>
+
 <%= link_to "Edit Information", edit_story_path %>

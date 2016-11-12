@@ -20,3 +20,5 @@
 <p><%= @player.backstory %></p>
 
 <%= link_to "Edit #{@player.character_name}", edit_story_player_path(@story, @player) %>
+
+<%= link_to "Back to Player Characters", story_players_path(@story) %>
