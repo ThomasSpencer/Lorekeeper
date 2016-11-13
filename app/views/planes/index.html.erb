@@ -2,7 +2,7 @@
 
 <% if @planes.count >= 1 %>
   <% @planes.each do |plane| %>
-    <h3>Planar Name: <%= plane.name %></h3>
+    <h3>Planar Name: <%= link_to "#{plane.name}", story_plane_path(@story.id, plane) %></h3>
     <h4>Portal Colour: <%= plane.colour %></h4>
   <% end %>
 <% else %>

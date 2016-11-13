@@ -1,0 +1,7 @@
+<h1>Information on <%= @plane.name %></h1>
+
+<p>
+<%= @plane.description %>
+</p>
+
+<%= link_to "Notable Locations Within #{@plane.name}", story_continents_path(@story.id)%>
