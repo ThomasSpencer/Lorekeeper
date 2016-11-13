@@ -1,0 +1,12 @@
+<h1>Planes for <%= @story.title %></h1>
+
+<% if @planes.count >= 1 %>
+  <% @planes.each do |plane| %>
+    <h3>Planar Name: <%= plane.name %></h3>
+    <h4>Portal Colour: <%= plane.colour %></h4>
+  <% end %>
+<% else %>
+  <h3>It appears your universe has no plane of existence.</h3>
+<% end %>
+
+<%= link_to "Add a New Plane of Existence", new_story_plane_path(@story) %>
