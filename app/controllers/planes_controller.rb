@@ -18,7 +18,9 @@ class PlanesController < ApplicationController
   end
 
   def create
-    @plane = Plane.new(planes_params)
+    @plane = Plane.new(plane_params)
+    @plane.story_id = @story.id
+    byebug
     if @plane.save
       redirect_to story_planes_path(@story)
     else
@@ -40,8 +42,8 @@ class PlanesController < ApplicationController
 
   private
 
-  def planes_params
-
+  def plane_params
+    params.require(:plane).permit(:name, :colour, :description, :story_id)
   end
 
 end
