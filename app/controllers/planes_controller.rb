@@ -30,7 +30,12 @@ class PlanesController < ApplicationController
 
   def update
     @plane = Plane.find(params[:id])
-    @plane.update(planes_params)
+
+    if @plane.update(plane_params)
+      redirect_to story_plane_path(@story)
+    else
+      render 'edit'
+    end
   end
 
   def destroy
