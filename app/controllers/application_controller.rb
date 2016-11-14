@@ -6,4 +6,12 @@ class ApplicationController < ActionController::Base
       @story = Story.find(params[:story_id])
     end
 
+    def find_plane
+      @plane = Plane.find(params[:plane_id])
+    end
+
+    def find_continent
+      @continent = Continent.find(params[:continent_id])
+    end
+
 end
