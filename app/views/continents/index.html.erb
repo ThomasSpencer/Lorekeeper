@@ -1,1 +1,16 @@
 <h1>Primary Locations for <%= @plane.name %></h1>
+
+<% if @contients %>
+
+  <% @contients.each do |continent| %>
+    <h3>continent.name</h3>
+    <%= link_to "More information on #{continent.name}", plane_continent_path(@plane) %>
+  <% end %>
+
+<% else %>
+
+  <h3>It appears you haven't added any important locations.</h3>
+
+<% end %>
+
+<%= link_to "Add a New Location", new_plane_continent_path(@plane) %>
