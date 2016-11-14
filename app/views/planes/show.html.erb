@@ -4,4 +4,6 @@
 <%= @plane.description %>
 </p>
 
-<%= link_to "Notable Locations Within #{@plane.name}", story_continents_path(@story.id)%>
+<%= link_to "Edit Information about #{@plane.name}", edit_story_plane_path(@story) %>
+<br>
+<%= link_to "Notable Locations Within #{@plane.name}", plane_continents_path(@plane)%>
