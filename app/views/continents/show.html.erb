@@ -1,0 +1,11 @@
+<h1>More Information on <%= @continent.name %></h1>
+
+<p>
+<%= @continent.description %>
+</p>
+<br>
+<%= link_to "Edit Information for #{@continent.name}", edit_plane_continent_path(@plane, @continent) %>
+<br>
+<%= link_to "View All Landscapes Within #{@continent.name}", continent_landscapes_path(@continent) %>
+<br>
+<%= link_to "View all City Settlements Within #{@continent.name}", continent_cities_path(@continent) %>
