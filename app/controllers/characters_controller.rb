@@ -46,4 +46,10 @@ class CharactersController < ApplicationController
     end
   end
 
+  private
+
+  def character_params
+    params.require(:character).permit(:city_id, :name, :profession, :backstory)
+  end
+
 end
