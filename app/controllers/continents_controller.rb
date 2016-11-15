@@ -2,7 +2,7 @@ class ContinentsController < ApplicationController
   before_action :find_plane
 
   def index
-    @continetns = Continent.all
+    @continents = Continent.all
   end
 
   def show
@@ -18,10 +18,11 @@ class ContinentsController < ApplicationController
   end
 
   def create
-    @continent = Continent.new
+    @continent = Continent.new(continent_params)
+    @continent.plane_id = @plane.id
 
     if @continent.save
-      redirect_to stories_continents_path
+      redirect_to plane_continents_path
     else
       render 'new'
     end
@@ -34,8 +35,14 @@ class ContinentsController < ApplicationController
 
   def destroy
     @continent = Continent.find(params[:id])
-    if @continent.destory
-      redirect_to stories_continents_path
+    if @continent.destroy
+      redirect_to plane_continents_path
     end
+  end
+
+  private
+
+  def continent_params
+    params.require(:continent).permit(:plane_id, :name, :description)
   end
 end
