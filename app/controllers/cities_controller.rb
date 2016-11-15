@@ -1,4 +1,6 @@
 class CitiesController < ApplicationController
+  before_action :find_continent
+
   def index
     @cities = City.all
   end
