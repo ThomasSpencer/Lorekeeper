@@ -14,4 +14,12 @@ class ApplicationController < ActionController::Base
       @continent = Continent.find(params[:continent_id])
     end
 
+    def find_city
+      @city = City.find(params[:city_id])
+    end
+
+    def find_landscape
+      @landscape = Landscape.find(params[:landscape_id])
+    end
+
 end
