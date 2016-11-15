@@ -43,8 +43,7 @@ class CharactersController < ApplicationController
 
     if @character.destroy
       redirect_to city_characters_path(@city)
-    else
-      render 'show'
+    end
   end
 
 end
