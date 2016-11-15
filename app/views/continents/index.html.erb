@@ -1,10 +1,11 @@
 <h1>Primary Locations for <%= @plane.name %></h1>
 
-<% if @contients %>
+<% if @continents %>
 
-  <% @contients.each do |continent| %>
-    <h3>continent.name</h3>
-    <%= link_to "More information on #{continent.name}", plane_continent_path(@plane) %>
+  <% @continents.each do |continent| %>
+    <h3><%= continent.name %></h3>
+    <%= link_to "More information on #{continent.name}", plane_continent_path(@plane, continent) %>
+    <%= link_to "Delete #{continent.name}", plane_continent_path(@plane, continent), method: :delete %>
   <% end %>
 
 <% else %>
@@ -12,5 +13,6 @@
   <h3>It appears you haven't added any important locations.</h3>
 
 <% end %>
-
+<br>
+<br>
 <%= link_to "Add a New Location", new_plane_continent_path(@plane) %>
