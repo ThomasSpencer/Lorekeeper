@@ -27,6 +27,9 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# Use Factory-Girl-Rails for factories to generate data while testing.
+gem 'factory_girl_rails', '~> 4.0'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
