@@ -36,7 +36,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
 
   # Use Factory-Girl-Rails for factories to generate data while testing.
-  gem 'factory_girl_rails', '~> 4.0'
+  gem 'factory_girl_rails', '~> 4.7'
 end
 
 group :development do
