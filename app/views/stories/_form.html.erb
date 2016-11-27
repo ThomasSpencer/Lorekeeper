@@ -1,21 +1,32 @@
 <%= form_for @story do |f| %>
-<div class="field">
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+<div class="form-group row">
+  <%= f.label :title, class: "col-sm-2 col-form-label"  %>
+  <div class="col-sm-8">
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
 </div>
-<div class="field">
-  <%= f.label :total_players %>
-  <%= f.number_field :total_players %>
+<div class="form-group row">
+  <%= f.label :total_players, class: "col-sm-2 col-form-label"  %>
+  <div class="col-sm-8">
+    <%= f.number_field :total_players, class: "form-control" %>
+  </div>
 </div>
-<div class="field">
-  <%= f.label :ruleset %>
-  <%= f.text_field :ruleset %>
+<div class="form-group row">
+  <%= f.label :ruleset, class: "col-sm-2 col-form-label" %>
+  <div class="col-sm-8">
+    <%= f.text_field :ruleset, class: "form-control" %>
+  </div>
 </div>
-<div class="field">
-  <%= f.label :description %>
-  <%= f.text_area :description %>
+<div class="form-group row">
+  <%= f.label :description, class: "col-sm-2 col-form-label" %>
+  <div class="col-sm-8">
+    <%= f.text_area :description, class: "form-control" %>
+  </div>
 </div>
-<div class="field">
-  <%= f.submit %>
+<div class="form-group row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-2">
+    <%= f.submit 'Create New Adventure', class: "form-control form-control-sm" %>
+  </div>
 </div>
 <% end %>
