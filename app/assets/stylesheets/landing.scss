@@ -11,10 +11,6 @@ article {
   padding-top: 2em;
 }
 
-.form-container {
-
-}
-
 
 //Header
 header {
@@ -63,7 +59,7 @@ header {
 }
 
 .new-story-thumbnail {
-  background-color: green;
+  background-color: $dark-blue;
   max-width: 100%;
   height: auto;
   text-align: center;
