@@ -1,12 +1,33 @@
-<h1>Planes for <%= @story.title %></h1>
+<header>
+  <h1 class="header-title">Planes for <%= @story.title %></h1>
+</header>
 
-<% if @planes.count >= 1 %>
-  <% @planes.each do |plane| %>
-    <h3>Planar Name: <%= link_to "#{plane.name}", story_plane_path(@story.id, plane) %></h3>
-    <h4>Portal Colour: <%= plane.colour %></h4>
-  <% end %>
-<% else %>
-  <h3>It appears your universe has no plane of existence.</h3>
-<% end %>
+<article class="main-content">
+  <div class="row">
+    <% @planes.each do |plane| %>
+    <div class="col-xs-6 col-sm-4 col-md-3">
+      <a href="<%= story_plane_path(@story, plane) %>" class="thumbnail thumbnail-custom">
+        <img class="thumbnail-image" src="http://placekitten.com/600/600" />
+        <h3 class="thumbnail-title"><%= plane.name %></h3>
+      </a>
+      <div class="thumbnail-options" role="group">
+        <a href="<%= edit_story_plane_path(@story, plane) %>">
+          <button type="button" class="btn-primary">Edit Information</button>
+        </a>
+        <a data-confirm="Are you sure you want to delete <%= plane.name %>?"data-method="delete" href="<%= story_plane_path(@story, plane) %>">
+          <button type="button" class="btn-danger">Delete <%= plane.name %></button>
+        </a>
+      </div>
+    </div>
+    <% end %>
+
+    <div class="col-xs-6 col-sm-4 col-md-3">
+      <a href="<%= new_story_plane_path(@story) %>" class="thumbnail new-thumbnail">
+        <h3 class="thumbnail-title">Create a New Plane of Existence</h3>
+      </a>
+    </div>
+
+  </div>
+</article>
 
 <%= link_to "Add a New Plane of Existence", new_story_plane_path(@story) %>
