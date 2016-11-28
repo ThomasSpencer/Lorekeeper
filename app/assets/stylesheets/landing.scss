@@ -34,7 +34,7 @@ header {
 
 //Main Content
 
-.story-thumbnail {
+.thumbnail-custom {
   background-color: $light-blue;
   padding: 0.5em;
   text-align: center;
@@ -58,7 +58,7 @@ header {
   }
 }
 
-.new-story-thumbnail {
+.new-thumbnail {
   background-color: $dark-blue;
   max-width: 100%;
   height: auto;

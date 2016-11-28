@@ -11,8 +11,8 @@
 
     <% @stories.each do |story| %>
       <div class="col-xs-6 col-sm-4 col-md-3">
-        <a href="<%= story_path(story) %>" class="thumbnail story-thumbnail">
-          <img class="story-image" src="http://placekitten.com/400/400">
+        <a href="<%= story_path(story) %>" class="thumbnail thumbnail-custom">
+          <img class="thumbnail-image" src="http://placekitten.com/400/400">
             <h3 class=><%= story.title %></h3>
         </a>
         <div class="thumbnail-options" role="group">
@@ -27,7 +27,7 @@
     <% end %>
 
     <div class="col-xs-6 col-sm-4 col-md-3">
-      <a href="<%= new_story_path %>" class="thumbnail new-story-thumbnail">
+      <a href="<%= new_story_path %>" class="thumbnail new-thumbnail">
         <h3 class="thumbnail-title">Create a New Adventure</h3>
       </a>
     </div>
