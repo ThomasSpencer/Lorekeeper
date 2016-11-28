@@ -5,13 +5,22 @@
 //General layout
 .section {
   background-color: $off-white;
-  border-radius: 2em;
+  border-radius: 1em;
+  padding: 0 0.5em;
 
 
   h1 {
     font-size: 4.5em;
     text-align: center;
   }
+
+  h3 {
+    font-size: 2.5em;
+  }
+}
+
+.sidebar {
+  padding-bottom: 0.25em;
 }
 
 //Form Design

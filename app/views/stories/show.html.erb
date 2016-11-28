@@ -1,20 +1,33 @@
-<h1><%= @story.title %></h1>
+<header>
+  <h1 class="header-title"><%= @story.title %></h1>
+  <h3 class="header-content">Welcome to the database for <%= @story.title %></h3>
+</header>
 
-<p> Welcome to the database for <%= @story.title %> </p>
-<ul>
-  <li>Number of Players: <%= link_to "#{@story.total_players}", story_players_path(@story) %>
-  <li>Ruleset: <%= @story.ruleset %></li>
-  <li>Completed Sessions: <%= @story.total_sessions %></li>
+<div class="col-sm-4">
+  <div class="section sidebar">
+    <h3>Information</h3>
+    <ul class="list-group">
+      <li class="list-group-item">Number of Players: <%= link_to "#{@story.total_players}", story_players_path(@story) %>
+      <li class="list-group-item">Ruleset: <%= @story.ruleset %></li>
+      <li class="list-group-item">Completed Sessions: <%= @story.total_sessions %></li>
+      <li class="list-group-item">
+        <%= link_to "Edit Information", edit_story_path %>
+      </li>
+    </ul>
+  </div>
+</div>
 
-<% if @story.description %>
-<h3>Overview</h3>
-<p><%= @story.description %></p>
-<% end %>
-
-<br>
-
-<%= link_to "View #{@story.title}'s Planes", story_planes_path(@story) %>
-
-<br>
-
-<%= link_to "Edit Information", edit_story_path %>
+<div class=" col-sm-8 col-sm-offset-0.5">
+  <div class="section">
+    <h3>Overview</h3>
+      <% if @story.description %>
+        <p><%= @story.description %></p>
+      <% else %>
+        <p>No overview given.</p>
+      <% end %>
+  </div>
+  <div class="section">
+    <h3>Planes</h3>
+    <%= link_to "View #{@story.title}'s Planes", story_planes_path(@story) %>
+  </div>
+</div>
