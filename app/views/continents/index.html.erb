@@ -1,18 +1,31 @@
-<h1>Primary Locations for <%= @plane.name %></h1>
+<header>
+  <h1 class="header-title">Locations for <%= @plane.name %></h1>
+</header>
 
-<% if @continents %>
+<article class="main-content">
+  <div class="row">
+    <% @continents.each do |continent| %>
+    <div class="col-xs-6 col-sm-4 col-md-3">
+      <a href="<%= plane_continent_path(@plane, continent) %>" class="thumbnail thumbnail-custom">
+        <img class="thumbnail-image" src="http://placekitten.com/600/600" />
+        <h3 class="thumbnail-title"><%= continent.name %></h3>
+      </a>
+      <div class="thumbnail-options" role="group">
+        <a href="<%= edit_plane_continent_path(@plane, continent) %>">
+          <button type="button" class="btn-primary">Edit Information</button>
+        </a>
+        <a data-confirm="Are you sure you want to delete <%= continent.name %>?"data-method="delete" href="<%= plane_continent_path(@plane, continent) %>">
+          <button type="button" class="btn-danger">Delete <%= continent.name %></button>
+        </a>
+      </div>
+    </div>
+    <% end %>
 
-  <% @continents.each do |continent| %>
-    <h3><%= continent.name %></h3>
-    <%= link_to "More information on #{continent.name}", plane_continent_path(@plane, continent) %>
-    <%= link_to "Delete #{continent.name}", plane_continent_path(@plane, continent), method: :delete %>
-  <% end %>
+    <div class="col-xs-6 col-sm-4 col-md-3">
+      <a href="<%= new_plane_continent_path(@plane) %>" class="thumbnail new-thumbnail">
+        <h3 class="thumbnail-title">Create a New Continent</h3>
+      </a>
+    </div>
 
-<% else %>
-
-  <h3>It appears you haven't added any important locations.</h3>
-
-<% end %>
-<br>
-<br>
-<%= link_to "Add a New Location", new_plane_continent_path(@plane) %>
+  </div>
+</article>

@@ -1,11 +1,35 @@
-<h1>More Information on <%= @continent.name %></h1>
+<header>
+  <h1 class="header-title"><%= @continent.name %></h1>
+  <h3 class="header-content">Current information regarding <%= @continent.name %></h3>
+</header>
 
-<p>
-<%= @continent.description %>
-</p>
-<br>
-<%= link_to "Edit Information for #{@continent.name}", edit_plane_continent_path(@plane, @continent) %>
-<br>
-<%= link_to "View All Landscapes Within #{@continent.name}", continent_landscapes_path(@continent) %>
-<br>
-<%= link_to "View all City Settlements Within #{@continent.name}", continent_cities_path(@continent) %>
+<div class="col-sm-4">
+  <div class="section sidebar">
+    <h3>Information</h3>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <%= link_to "Edit Information", edit_plane_continent_path(@plane, @continent) %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class=" col-sm-8 col-sm-offset-0.5">
+  <div class="section">
+    <h3>Overview</h3>
+      <% if @continent.description %>
+        <p><%= @continent.description %></p>
+      <% else %>
+        <p>No overview given.</p>
+      <% end %>
+  </div>
+  <div class="section">
+    <h3>Landscapes</h3>
+    <%= link_to "View #{@continent.name}'s Landscapes", continent_landscapes_path(@continent) %>
+  </div>
+  <div class="section">
+    <h3>Cities</h3>
+    <%= link_to "View #{@continent.name}'s Major Cities", continent_cities_path(@continent) %>
+  </div>
+
+</div>
