@@ -1,9 +1,31 @@
-<h1>Information on <%= @plane.name %></h1>
+<header>
+  <h1 class="header-title"><%= @plane.name %></h1>
+  <h3 class="header-content">Current information regarding <%= @plane.name %></h3>
+</header>
 
-<p>
-<%= @plane.description %>
-</p>
+<div class="col-sm-4">
+  <div class="section sidebar">
+    <h3>Information</h3>
+    <ul class="list-group">
+      <li class="list-group-item">Planar Colour: <%= @plane.colour %> </li>
+      <li class="list-group-item">
+        <%= link_to "Edit Information", edit_story_plane_path(@story, @plane) %>
+      </li>
+    </ul>
+  </div>
+</div>
 
-<%= link_to "Edit Information about #{@plane.name}", edit_story_plane_path(@story) %>
-<br>
-<%= link_to "Notable Locations Within #{@plane.name}", plane_continents_path(@plane)%>
+<div class=" col-sm-8 col-sm-offset-0.5">
+  <div class="section">
+    <h3>Overview</h3>
+      <% if @plane.description %>
+        <p><%= @plane.description %></p>
+      <% else %>
+        <p>No overview given.</p>
+      <% end %>
+  </div>
+  <div class="section">
+    <h3>Continents</h3>
+    <%= link_to "View #{@plane.name}'s Contients", plane_continents_path(@plane) %>
+  </div>
+</div>
