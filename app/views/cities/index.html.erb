@@ -1,0 +1,31 @@
+<header>
+  <h1 class="header-title">Cities within <%= @continent.name %></h1>
+</header>
+
+<article class="main-content">
+  <div class="row">
+    <% @cities.each do |city| %>
+    <div class="col-xs-6 col-sm-4 col-md-3">
+      <a href="<%= continent_city_path(@continent, city) %>" class="thumbnail thumbnail-custom">
+        <img class="thumbnail-image" src="http://placekitten.com/600/600" />
+        <h3 class="thumbnail-title"><%= city.name %></h3>
+      </a>
+      <div class="thumbnail-options" role="group">
+        <a href="<%= edit_continent_city_path(@continent, city) %>">
+          <button type="button" class="btn-primary">Edit Information</button>
+        </a>
+        <a data-confirm="Are you sure you want to delete <%= city.name %>?"data-method="delete" href="<%= continent_city_path(@continent, city) %>">
+          <button type="button" class="btn-danger">Delete <%= city.name %></button>
+        </a>
+      </div>
+    </div>
+    <% end %>
+
+    <div class="col-xs-6 col-sm-4 col-md-3">
+      <a href="<%= new_continent_city_path(@continent) %>" class="thumbnail new-thumbnail">
+        <h3 class="thumbnail-title">Add a city/town</h3>
+      </a>
+    </div>
+
+  </div>
+</article>

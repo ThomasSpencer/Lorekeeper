@@ -1,0 +1,32 @@
+<header>
+  <h1 class="header-title"><%= @city.name %></h1>
+  <h3 class="header-content">Current information regarding <%= @city.name %></h3>
+</header>
+
+<div class="col-sm-4">
+  <div class="section sidebar">
+    <h3>Information</h3>
+    <ul class="list-group">
+      <li class="list-group-item"> Population: <%= @city.population %></li>
+      <li class="list-group-item">
+        <%= link_to "Edit Information", edit_continent_city_path(@continent, @city) %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class=" col-sm-8 col-sm-offset-0.5">
+  <div class="section">
+    <h3>Overview</h3>
+      <% if @city.description %>
+        <p><%= @city.description %></p>
+      <% else %>
+        <p>No overview given.</p>
+      <% end %>
+  </div>
+  <div class="section">
+    <h3>Landscapes</h3>
+    <%= link_to "View #{@city.name}'s Non-Player Residents", city_characters_path(@city) %>
+  </div>
+
+</div>
