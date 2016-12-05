@@ -19,6 +19,7 @@ class CitiesController < ApplicationController
 
   def create
     @city = City.new(city_params)
+    @city.continent_id = @continent.id
 
     if @city.save
       redirect_to continent_cities_path
@@ -48,7 +49,7 @@ class CitiesController < ApplicationController
   private
 
   def city_params
-    params.require(:city).permit(:continent_id, :name, :population, :description)
+    params.require(:city).permit(:name, :population, :description)
   end
 
 end
