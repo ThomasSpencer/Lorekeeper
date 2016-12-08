@@ -19,6 +19,7 @@ class LandscapesController < ApplicationController
 
   def create
     @landscape = Landscape.new(landscape_params)
+    @landscape.continent_id = @continent.id
 
     if @landscape.save
       redirect_to continent_landscapes_path(@continent)
@@ -31,7 +32,7 @@ class LandscapesController < ApplicationController
     @landscape = Continent.find(params[:id])
 
     if @landscape.update
-      redirect_to continent_landscape_path(@contient, @landscape)
+      redirect_to continent_landscapes_path
     else
       render 'edit'
     end
@@ -45,6 +46,12 @@ class LandscapesController < ApplicationController
     else
       render 'show'
     end
+  end
+
+  private
+
+  def landscape_params
+    params.require(:landscape).permit(:name, :terrain, :description)
   end
 
 end
