@@ -1,0 +1,26 @@
+<%= form_for [@continent, @landscape] do |f| %>
+<div class="form-group row">
+  <%= f.label :name, class: "col-sm-2 col-form-label"  %>
+  <div class="col-sm-8">
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group row">
+  <%= f.label :terrain, class: "col-sm-2 col-form-label"  %>
+  <div class="col-sm-8">
+    <%= f.text_field :terrain, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group row">
+  <%= f.label :description, class: "col-sm-2 col-form-label" %>
+  <div class="col-sm-8">
+    <%= f.text_area :description, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-2">
+    <%= f.submit 'Create New Landscape', class: "form-control form-control-sm" %>
+  </div>
+</div>
+<% end %>

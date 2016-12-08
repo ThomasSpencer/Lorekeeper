@@ -1,0 +1,32 @@
+<header>
+  <h1 class="header-title"><%= @landscape.name %></h1>
+  <h3 class="header-content">Current information regarding <%= @landscape.name %></h3>
+</header>
+
+<div class="col-sm-4">
+  <div class="section sidebar">
+    <h3>Information</h3>
+    <ul class="list-group">
+      <li class="list-group-item"> Terrain: <%= @landscape.terrain %></li>
+      <li class="list-group-item">
+        <%= link_to "Edit Information", edit_continent_landscape_path(@continent, @landscape) %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class=" col-sm-8 col-sm-offset-0.5">
+  <div class="section">
+    <h3>Overview</h3>
+      <% if @landscape.description %>
+        <p><%= @landscape.description %></p>
+      <% else %>
+        <p>No overview given.</p>
+      <% end %>
+  </div>
+  <div class="section">
+    <h3>NPCs</h3>
+    <%= link_to "View #{@landscape.name}'s Creatures", landscape_creatures_path(@landscape) %>
+  </div>
+
+</div>
