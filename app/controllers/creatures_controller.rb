@@ -49,7 +49,7 @@ class CreaturesController < ApplicationController
   private
 
   def creature_params
-    params.require(:creature).permit(:landscape_id, :name, :type, :size, :strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma, :abilities)
+    params.require(:creature).permit(:name, :type, :size, :strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma, :abilities)
   end
 
 end
