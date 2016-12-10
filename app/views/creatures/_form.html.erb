@@ -1,0 +1,68 @@
+<%= form_for [@landscape, @creature] do |f| %>
+<div class="form-group row">
+  <%= f.label :name, class: "col-sm-2 col-form-label"  %>
+  <div class="col-sm-8">
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group row">
+  <%= f.label :origin, 'Origin/Type', class: "col-sm-2 col-form-label" %>
+  <div class="col-sm-8">
+    <%= f.text_field :origin, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group row">
+  <%= f.label :size, class: "col-sm-2 col-form-label" %>
+  <div class="col-sm-8">
+    <%= f.text_field :size, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group row">
+  <%= f.label :strength, class: "col-sm-2 col-form-label" %>
+  <div class="col-sm-8">
+    <%= f.number_field :strength, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group row">
+  <%= f.label :dexterity, class: "col-sm-2 col-form-label" %>
+  <div class="col-sm-8">
+    <%= f.number_field :dexterity, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group row">
+  <%= f.label :constitution, class: "col-sm-2 col-form-label" %>
+  <div class="col-sm-8">
+    <%= f.number_field :constitution, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group row">
+  <%= f.label :intelligence, class: "col-sm-2 col-form-label" %>
+  <div class="col-sm-8">
+    <%= f.number_field :intelligence, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group row">
+  <%= f.label :wisdom, class: "col-sm-2 col-form-label" %>
+  <div class="col-sm-8">
+    <%= f.number_field :wisdom, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group row">
+  <%= f.label :charisma, class: "col-sm-2 col-form-label" %>
+  <div class="col-sm-8">
+    <%= f.number_field :charisma, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group row">
+  <%= f.label :abilties, class: "col-sm-2 col-form-label" %>
+  <div class="col-sm-8">
+    <%= f.text_area :abilities, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-2">
+    <%= f.submit 'Create New Creature', class: "form-control form-control-sm" %>
+  </div>
+</div>
+<% end %>

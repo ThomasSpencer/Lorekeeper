@@ -1,0 +1,35 @@
+<header>
+  <h1 class="header-title"><%= @creature.name %></h1>
+  <h3 class="header-content">Current information regarding <%= @creature.name %></h3>
+</header>
+
+<div class="col-sm-4">
+  <div class="section sidebar">
+    <h3>Information</h3>
+    <ul class="list-group">
+      <li class="list-group-item">Size: <%= @creature.size %></li>
+      <li class="list-group-item">Origin/Type: <%= @creature.origin %></li>
+      <li class="list-group-item">Strength: <%= @creature.strength %></li>
+      <li class="list-group-item">Dexterity: <%= @creature.dexterity %></li>
+      <li class="list-group-item">Constitution: <%= @creature.constitution %></li>
+      <li class="list-group-item">Intelligence: <%= @creature.intelligence %></li>
+      <li class="list-group-item">Wisdom: <%= @creature.wisdom %></li>
+      <li class="list-group-item">Charisma: <%= @creature.charisma %></li>
+      <li class="list-group-item">Abilities: <%= @creature.abilities %></li>
+      <li class="list-group-item">
+        <%= link_to "Edit Information", edit_landscape_creature_path(@landscape, @creature) %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class=" col-sm-8 col-sm-offset-0.5">
+  <div class="section">
+    <h3>Overview</h3>
+      <% if @creature.description %>
+        <p><%= @creature.description %></p>
+      <% else %>
+        <p>No overview given.</p>
+      <% end %>
+  </div>
+</div>
