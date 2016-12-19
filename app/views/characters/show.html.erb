@@ -1,0 +1,27 @@
+<header>
+  <h1 class="header-title"><%= @character.name %></h1>
+  <h3 class="header-content">Current information regarding <%= @character.name %></h3>
+</header>
+
+<div class="col-sm-4">
+  <div class="section sidebar">
+    <h3>Information</h3>
+    <ul class="list-group">
+      <li class="list-group-item">Profession: <%= @character.profession %></li>
+      <li class="list-group-item">
+        <%= link_to "Edit Information", edit_city_character_path(@city, @character) %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class=" col-sm-8 col-sm-offset-0.5">
+  <div class="section">
+    <h3>Overview</h3>
+      <% if @character.backstory %>
+        <p><%= @character.backstory %></p>
+      <% else %>
+        <p>No overview given.</p>
+      <% end %>
+  </div>
+</div>

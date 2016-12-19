@@ -1,0 +1,31 @@
+<header>
+  <h1 class="header-title">Important NPCs in <%= @city.name %></h1>
+</header>
+
+<article class="main-content">
+  <div class="row">
+    <% @characters.each do |character| %>
+    <div class="col-xs-6 col-sm-4 col-md-3">
+      <a href="<%= city_character_path(@city, character) %>" class="thumbnail thumbnail-custom">
+        <img class="thumbnail-image" src="http://placekitten.com/600/600" />
+        <h3 class="thumbnail-title"><%= character.name %></h3>
+      </a>
+      <div class="thumbnail-options" role="group">
+        <a href="<%= edit_city_character_path(@city, character) %>">
+          <button type="button" class="btn-primary">Edit Information</button>
+        </a>
+        <a data-confirm="Are you sure you want to delete <%= character.name %>?"data-method="delete" href="<%= city_character_path(@city, character) %>">
+          <button type="button" class="btn-danger">Delete <%= character.name %></button>
+        </a>
+      </div>
+    </div>
+    <% end %>
+
+    <div class="col-xs-6 col-sm-4 col-md-3">
+      <a href="<%= new_city_character_path(@city) %>" class="thumbnail new-thumbnail">
+        <h3 class="thumbnail-title">Add an Non-Player Character</h3>
+      </a>
+    </div>
+
+  </div>
+</article>
