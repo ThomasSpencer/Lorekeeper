@@ -25,8 +25,10 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-#Use Bootstrap for responsive design layout
+# Use Bootstrap for responsive design layout
 gem 'bootstrap-sass', '~> 3.3.6'
+# Use Sorcery for login authentication library.
+gem 'sorcery'
 
 
 # Use Capistrano for deployment
