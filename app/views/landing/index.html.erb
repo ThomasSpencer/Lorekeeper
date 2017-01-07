@@ -7,30 +7,5 @@
 </header>
 
 <article class="main-content">
-  <div class="row">
-
-    <% @stories.each do |story| %>
-      <div class="col-xs-6 col-sm-4 col-md-3">
-        <a href="<%= story_path(story) %>" class="thumbnail thumbnail-custom">
-          <img class="thumbnail-image" src="http://placekitten.com/400/400">
-            <h3 class=><%= story.title %></h3>
-        </a>
-        <div class="thumbnail-options" role="group">
-          <a href="<%= edit_story_path(story) %>">
-            <button type="button" class="btn-primary">Edit Information</button>
-          </a>
-          <a data-confirm="Are you sure you want to delete <%= story.title %>?"data-method="delete" href="<%= story_path(story) %>">
-            <button type="button" class="btn-danger">Delete <%= story.title %></button>
-          </a>
-        </div>
-      </div>
-    <% end %>
-
-    <div class="col-xs-6 col-sm-4 col-md-3">
-      <a href="<%= new_story_path %>" class="thumbnail new-thumbnail">
-        <h3 class="thumbnail-title">Create a New Adventure</h3>
-      </a>
-    </div>
-
-  </div>
+  <h3>Login goes here</h3>
 </article>
