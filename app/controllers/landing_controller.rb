@@ -1,7 +1,7 @@
 class LandingController < ApplicationController
 
   def index
-    @stories = Story.all
+    @user = User.new
   end
 
   def show
