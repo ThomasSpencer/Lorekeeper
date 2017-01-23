@@ -24,5 +24,7 @@ Rails.application.routes.draw do
     resources :creatures
   end
 
+  resources :users
+
   root 'landing#index'
 end
